@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Terminal Mono palette — committed direction */
+  --color-background: #090d10;
+  --color-foreground: #eef0f3;
+  --color-card: #14181c;
+  --color-card-foreground: #eef0f3;
+  --color-muted: #1e2226;
+  --color-muted-foreground: #9a9fa5;
+  --color-border: #2a2e33;
+  --color-border-hairline: #2a2e33;
+  --color-ring: #3faff3;
+  --color-accent: oklch(0.72 0.14 240);
+  --color-accent-fg: #111111;
+  --color-accent-muted: oklch(0.72 0.14 240 / 0.12);
+  --color-primary: #3faff3;
+  --color-on-primary: #111111;
+  --color-secondary: #1e2226;
+  --color-on-secondary: #eef0f3;
+  --color-destructive: #c9302d;
+  --color-on-destructive: #ffffff;
+
+  --color-surface: #090d10;
+  --color-surface-raised: #14181c;
+  --color-surface-sidebar: #0d1115;
+
+  --color-fg: #eef0f3;
+  --color-fg-muted: #9a9fa5;
+  --color-fg-subtle: #6b7280;
+
+  --color-success: oklch(0.58 0.14 155);
+  --color-warning: oklch(0.65 0.15 80);
+  --color-danger: #c9302d;
+
+  --radius-card: 0.5rem;
+  --radius-button: 0.375rem;
+  --radius-input: 0.375rem;
+
+  --shadow-card: 0 1px 3px rgb(0 0 0 / 0.3), 0 1px 2px rgb(0 0 0 / 0.2);
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-fg font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+
+  h1 { @apply text-2xl font-semibold; }
+  h2 { @apply text-xl font-semibold mt-8 mb-3; }
+  h3 { @apply text-lg font-medium mt-6 mb-2; }
+
+  p { @apply leading-relaxed; }
+
+  a {
+    @apply text-accent underline-offset-2 hover:underline;
+  }
+
+  ::selection {
+    @apply bg-accent-muted text-foreground;
+  }
+
+  /* Box-drawing character dividers for Terminal Mono style */
+  hr {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 2rem 0;
+    position: relative;
+  }
+}
+
+@utility prose-blog {
+  & h2 {
+    @apply text-xl font-heading font-semibold mt-8 mb-3 text-fg;
+  }
+  & h3 {
+    @apply text-lg font-heading font-medium mt-6 mb-2 text-fg;
+  }
+  & p {
+    @apply leading-relaxed mb-4 text-fg;
+  }
+  & ul, & ol {
+    @apply my-4 pl-6 space-y-1;
+  }
+  & ul { @apply list-disc; }
+  & ol { @apply list-decimal; }
+  & li { @apply leading-relaxed; }
+  & blockquote {
+    @apply border-l-3 border-accent pl-4 my-6 italic text-muted-foreground;
+  }
+  & code {
+    @apply font-mono text-sm bg-accent-muted rounded px-1.5 py-0.5;
+  }
+  & pre {
+    @apply bg-muted text-foreground rounded-card p-4 my-6 overflow-x-auto border border-border;
+  }
+  & pre code {
+    @apply bg-transparent text-foreground p-0;
+  }
+  & strong { @apply font-semibold; }
+  & em { @apply italic; }
+  & hr {
+    @apply border-border my-8;
+  }
+  & a {
+    @apply text-accent underline underline-offset-2;
+  }
+}
