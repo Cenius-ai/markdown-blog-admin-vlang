@@ -40,7 +40,7 @@ See [`INSTALL.md`](INSTALL.md) for full setup and usage instructions.
 
 ## Architecture
 
-No external services required: the entire blog platform runs from this V repo (57 files). Top-level layout: `app/`, `components/`, `lib/`, `prisma/`. `install.sh` wires up dependencies and loads seed records; after it runs the app has real data to show. Full setup details: [`INSTALL.md`](INSTALL.md).
+No external services required: the entire blog platform runs from this V repo (44 files). Top-level layout: `app/`, `components/`, `lib/`, `prisma/`. `install.sh` wires up dependencies and loads seed records; after it runs the app has real data to show. Full setup details: [`INSTALL.md`](INSTALL.md).
 
 ## Usage guide
 
